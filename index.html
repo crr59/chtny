@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chtny</title>
-  <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Space Unicorn</title>
 
-    html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+<style>
 
-    img {
-      max-width: 100%;
-      max-height: 100vh;
-      display: block;
-      object-fit: contain;
-    }
-  </style>
+:root{
+  --bg:#F4F1F8;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* container */
+.hero{
+  width:min(70vw,700px);
+  aspect-ratio:1/1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* unicorn image */
+.hero img{
+  width:100%;
+  height:auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* subtle floating motion */
+@keyframes float{
+  0%,100%{
+    transform:translateY(0px);
+  }
+  50%{
+    transform:translateY(-12px);
+  }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  .hero img{
+    animation:none;
+  }
+}
+
+</style>
 </head>
+
 <body>
-  <img src="https://cdn.dribbble.com/userupload/23376562/file/original-ac0acdba9a5ef7169322a147bb2005e2.jpg" alt="Chtny">
+
+<div class="hero">
+  <img src="unicorn.png" alt="Sassy unicorn astronaut icon">
+</div>
+
 </body>
 </html>
